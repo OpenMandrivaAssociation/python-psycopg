@@ -5,7 +5,7 @@
 Summary:        PostgreSQL database adapter for Python
 Name:           python-%module
 Version:        1.1.21
-Release:        %mkrel 3
+Release:        %mkrel 4
 Group:          Development/Python
 License:        GPL
 URL:            http://www.initd.org/software/initd/psycopg
@@ -24,14 +24,14 @@ the aim of being very small and fast, and stable as a rock. The main
 advantages of psycopg are that it supports the full Python DBAPI-2.0 and
 being thread safe at level 2.
 
-%package -n zope-ZPsycopgDA
-Summary: Zope postgresql adaptor
-Group: Networking/WWW
-Requires: zope
-Requires: %{name} = %{version}
-
-%description -n zope-ZPsycopgDA
-Zope postgresql adaptor
+# %package -n zope-ZPsycopgDA
+# Summary: Zope postgresql adaptor
+# Group: Networking/WWW
+# Requires: zope
+# Requires: %{name} = %{version}
+# 
+# %description -n zope-ZPsycopgDA
+# Zope postgresql adaptor
 
 %prep
 %setup -q -n %{module}-%{version}
@@ -45,8 +45,8 @@ mkdir -p $RPM_BUILD_ROOT/%{py_platsitedir}
 install -m 555 psycopgmodule.so $RPM_BUILD_ROOT/%{py_platsitedir}
 
 # isntall zope product
-mkdir -p $RPM_BUILD_ROOT/%zope_product_path
-cp -a ZPsycopgDA $RPM_BUILD_ROOT/%zope_product_path
+# mkdir -p $RPM_BUILD_ROOT/%zope_product_path
+# cp -a ZPsycopgDA $RPM_BUILD_ROOT/%zope_product_path
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -56,9 +56,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS  COPYING  CREDITS  FAQ  INSTALL  NEWS  README  RELEASE-1.0  SUCCESS  TODO doc
 %{py_platsitedir}/*.so
 
-%files -n zope-ZPsycopgDA
-%defattr(-,root,root,-)
-%zope_product_path/ZPsycopgDA
+# %files -n zope-ZPsycopgDA
+# %defattr(-,root,root,-)
+# %zope_product_path/ZPsycopgDA
 
 
 
