@@ -10,7 +10,6 @@ Group:          Development/Python
 License:        GPL
 URL:            http://www.initd.org/software/initd/psycopg
 Source0:        http://initd.org/pub/software/psycopg/%{module}-%{version}.tar.bz2
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 # for DateTime
 Requires:       python-egenix-mx-base
 BuildRequires:  python-devel
