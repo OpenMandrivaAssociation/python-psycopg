@@ -13,7 +13,7 @@ Source0:        http://initd.org/pub/software/psycopg/%{module}-%{version}.tar.b
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 # for DateTime
 Requires:       python-egenix-mx-base
-BuildRequires:  python-devel
+%py_requires -d
 BuildRequires:  postgresql-devel 
 BuildRequires:  python-egenix-mx-base
 
@@ -37,10 +37,12 @@ being thread safe at level 2.
 %setup -q -n %{module}-%{version}
 
 %build
-%configure --with-postgres-includes=%{_includedir}/pgsql/ --with-mxdatetime-includes=%{py_puresitedir}/mx/DateTime/mxDateTime/
+%configure2_5x \
+   --with-mxdatetime-includes=%{py_platsitedir}/mx/DateTime/mxDateTime/
 %make
 
 %install
+rm -rf %buildroot
 mkdir -p $RPM_BUILD_ROOT/%{py_platsitedir}
 install -m 555 psycopgmodule.so $RPM_BUILD_ROOT/%{py_platsitedir}
 
