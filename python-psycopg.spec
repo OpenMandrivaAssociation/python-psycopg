@@ -5,11 +5,12 @@
 Summary:        PostgreSQL database adapter for Python
 Name:           python-%module
 Version:        1.1.21
-Release:        %mkrel 7
+Release:        %mkrel 8
 Group:          Development/Python
 License:        GPL
 URL:            http://www.initd.org/software/initd/psycopg
 Source0:        http://initd.org/pub/software/psycopg/%{module}-%{version}.tar.bz2
+Patch0:		psycopg-1.1.21-linkage.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 # for DateTime
 Requires:       python-egenix-mx-base
@@ -35,6 +36,7 @@ being thread safe at level 2.
 
 %prep
 %setup -q -n %{module}-%{version}
+%patch0 -p0
 
 %build
 %configure2_5x \
