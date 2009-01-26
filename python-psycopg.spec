@@ -5,7 +5,7 @@
 Summary:        PostgreSQL database adapter for Python
 Name:           python-%module
 Version:        1.1.21
-Release:        %mkrel 8
+Release:        %mkrel 9
 Group:          Development/Python
 License:        GPL
 URL:            http://www.initd.org/software/initd/psycopg
@@ -46,7 +46,7 @@ being thread safe at level 2.
 %install
 rm -rf %buildroot
 mkdir -p $RPM_BUILD_ROOT/%{py_platsitedir}
-install -m 555 psycopgmodule.so $RPM_BUILD_ROOT/%{py_platsitedir}
+install -m 755 psycopgmodule.so $RPM_BUILD_ROOT/%{py_platsitedir}
 
 # isntall zope product
 # mkdir -p $RPM_BUILD_ROOT/%zope_product_path
