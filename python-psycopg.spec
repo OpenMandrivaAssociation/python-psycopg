@@ -5,7 +5,7 @@
 Summary:        PostgreSQL database adapter for Python
 Name:           python-%module
 Version:        1.1.21
-Release:        %mkrel 10
+Release:        %mkrel 11
 Group:          Development/Python
 License:        GPL
 URL:            http://www.initd.org/software/initd/psycopg
