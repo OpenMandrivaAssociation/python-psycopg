@@ -1,0 +1,19 @@
+--- Makefile.pre.in~	2005-10-01 02:14:45.000000000 +0200
++++ Makefile.pre.in	2009-01-26 14:34:47.000000000 +0100
+@@ -114,7 +114,7 @@
+ LDFLAGS=	@LDFLAGS@
+ LDLAST=		@LDLAST@
+ DEFS=		@DEFS@
+-LIBS=		@LIBS@
++LIBS=		@LIBS@ -lpython$(VERSION)
+ LIBM=		@LIBM@
+ LIBC=		@LIBC@
+ RANLIB=		@RANLIB@
+--- Setup.in~	2005-10-01 02:14:45.000000000 +0200
++++ Setup.in	2009-01-26 14:41:30.000000000 +0100
+@@ -2,4 +2,4 @@
+ LDFLAGS= -s
+ LDSHARED= @LINKCC@ -s -shared -lc
+ *shared*
+-psycopg module.c connection.c cursor.c typeobj.c typemod.c @LIBOBJS@ @PGSQLLIBS@
++psycopg module.c connection.c cursor.c typeobj.c typemod.c @LIBOBJS@ $(LDFLAGS) @PGSQLLIBS@ $(LIBS)
