@@ -35,7 +35,7 @@ being thread safe at level 2.
 # Zope postgresql adaptor
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -qn psycopg2-%{version}
 %patch0 -p0
 
 %build
