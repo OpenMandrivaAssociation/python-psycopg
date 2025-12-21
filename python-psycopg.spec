@@ -14,6 +14,11 @@ Source0:        http://initd.org/pub/software/psycopg/%{module}-%{version}.tar.b
 Patch0:		psycopg-1.1.21-linkage.patch
 # for DateTime
 Requires:       python-egenix-mx-base
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  python-devel
 BuildRequires:  postgresql-devel 
 BuildRequires:  python-egenix-mx-base
